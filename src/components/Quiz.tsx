@@ -6,29 +6,44 @@ import Container from "./container";
 
 const questions = [
   {
-    question: "What is the capital of France?",
-    choices: ["Paris", "London", "New York"],
-    answer: "Paris",
+    question: "What is React?",
+    choices: [
+        "A JavaScript framework",
+        "A JavaScript library",
+        "A CSS framework",
+        "A CSS library",
+      ],
+    answer: "A JavaScript framework",
   },
   {
-    question: "What is the largest planet in our solar system?",
-    choices: ["Mars", "Jupiter", "Venus"],
-    answer: "Jupiter",
+    question: "What does JSX stand for?",
+    choices: [
+        "JavaScript XML",
+        "Java Standard Extensions",
+        "JavaScript Style eXtensions",
+        "Java Syntax Extension",
+      ],
+    answer: "JavaScript XML",
   },
   {
-    question: "What is the boiling point of water?",
-    choices: ["100°C", "0°C", "50°C"],
-    answer: "100°C",
+    question: "What is the virtual DOM?",
+    choices: [
+        "A tool to create virtual machines",
+        "A way to visualize your components",
+        "An in-memory representation of the real DOM",
+        "A new DOM implementation from React",
+      ],
+    answer: "A way to visualize your components",
   },
   {
-    question: "What is the largest planet in our solar system?",
-    choices: ["Mars", "Jupiter", "Venus"],
-    answer: "Jupiter",
+    question: "React.js is written in which of the following language?",
+    choices: ["C", "C++", "JavaScript", "Java"],
+    answer: "JavaScript",
   },
   {
-    question: "What is the boiling point of water?",
-    choices: ["100°C", "0°C", "50°C"],
-    answer: "100°C",
+    question: "Which of the following command is used to Install create-react-app?",
+    choices: ["npm install create-react-app", "npm install -f create-react-app", "npm install -g create-react-app", "install -g create-react-app"],
+    answer: "npm install -g create-react-app",
   },
 ];
 
@@ -60,7 +75,7 @@ const Quiz: React.FC = () => {
   };
   return (
     <Container>
-      <QuizTimer duration={60} onTimeUp={() => console.log("completed")} />
+      <QuizTimer duration={60} onTimeUp={() => handleSubmit()} />
       {currentQuestion < questions.length ? (
         <Question
           question={questions[currentQuestion].question}

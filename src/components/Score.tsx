@@ -5,7 +5,7 @@ import Container from "./container";
 const QuizScore: React.FC = () => {
   return (
     <Container>
-      <div className="text-center">
+      <div className="text-center py-4">
         <h1 className="text-2xl">Congratulations!!</h1>
         <h1 className="text-xl mt-4">You have successfully completed the quiz.</h1>
         <p className="text-xl mt-4">You have scored:</p>

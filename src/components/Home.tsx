@@ -21,7 +21,7 @@ const Home: React.FC = () => {
             <ul className="text-left list-disc list-inside text-gray-600 text-lg">
               <li>50% passing percentage.</li>
               <li>5 questions</li>
-              <li>60 mins</li>
+              <li>60 Seconds</li>
               <li>1 attempt daily</li>
             </ul>
           </div>

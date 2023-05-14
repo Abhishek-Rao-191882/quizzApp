@@ -22,7 +22,7 @@ const Question: React.FC<Props> = ({
       <div className="flex flex-col">
         {choices.map((choice, index) => (
           <button
-            className="border border-blue-200 bg-green-200 bg-opacity-60 rounded-md py-1 mt-4 hover:border-green-200 hover:bg-blue-200"
+            className="border text-left px-4 border-blue-200 bg-green-200 bg-opacity-60 rounded-md py-1 mt-4 hover:border-green-200 hover:bg-blue-200"
             onClick={() => onAnswer(choice)}
             key={index}
           >
