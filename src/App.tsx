@@ -1,14 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Quiz from "./components/Quiz";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./components/Home";
+import QuizScore from "./components/Score";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/quiz" element={<Quiz />}></Route>
+        <Route path='/score' element={<QuizScore/>}></Route>
+      </Routes>
+    </Router>
   );
 }
 
