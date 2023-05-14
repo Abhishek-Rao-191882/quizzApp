@@ -21,7 +21,7 @@ const QuizTimer: React.FC<Props> = ({ duration, onTimeUp }) => {
     return () => clearInterval(intervalId);
   }, [remainingTime, onTimeUp]);
 
-  return <div>Time Left: {remainingTime} seconds</div>;
+  return <div className='text-xl text-center py-10'>Time Left: {remainingTime<=15 ? <span className='text-red-800'>{remainingTime} Seconds</span>: <span>{remainingTime} Seconds</span> } </div>;
 };
 
 export default QuizTimer;

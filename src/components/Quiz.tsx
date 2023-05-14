@@ -36,6 +36,7 @@ const Quiz: React.FC = () => {
   const navigate = useNavigate();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
+  const [index, setIndex] = useState(0)
 
   const handleAnswer = (answer: string) => {
     if (answer === questions[currentQuestion].answer) {
@@ -45,6 +46,7 @@ const Quiz: React.FC = () => {
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
+      setIndex(nextQuestion);
     } else {
       handleSubmit();
     }
@@ -52,21 +54,23 @@ const Quiz: React.FC = () => {
 
   const handleSubmit = () => {
     localStorage.setItem("quizScore", JSON.stringify(score));
+    localStorage.setItem("total", JSON.stringify(questions.length));
+    localStorage.setItem("percentage", JSON.stringify(score/questions.length*100));
     navigate("/score");
   };
   return (
     <Container>
-      <h1 className="text-center">Quiz App</h1>
-      <QuizTimer duration={10} onTimeUp={() => handleSubmit()} />
+      <QuizTimer duration={60} onTimeUp={() => console.log("completed")} />
       {currentQuestion < questions.length ? (
         <Question
           question={questions[currentQuestion].question}
           choices={questions[currentQuestion].choices}
           answer={questions[currentQuestion].answer}
           onAnswer={handleAnswer}
+          index={index}
         />
       ) : (
-        "null"
+        "No questions posted."
       )}
     </Container>
   );
